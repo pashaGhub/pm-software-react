@@ -1,0 +1,45 @@
+.Layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.Header {
+  padding: 0px 15px;
+  background-color: rgba(63, 81, 181, 0.75);
+
+  &--navigation {
+    max-width: 1020px;
+    margin: 0 auto;
+
+    &-item {
+      color: #fff;
+      font-size: 20px;
+      line-height: 20px;
+      padding: 15px 10px;
+      display: inline-block;
+      transition: all 0.3s;
+
+      &:hover,
+      &.active {
+        background-color: #fff;
+        color: rgba(63, 81, 181, 0.75);
+      }
+    }
+  }
+}
+
+.Main {
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.Footer {
+  padding: 10px 15px;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0.5;
+}

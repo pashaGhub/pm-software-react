@@ -1,0 +1,91 @@
+.Sidebar {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  padding: 20px 10px;
+  background: rgba(63, 81, 181, 0.8);
+
+  &--group {
+    padding-bottom: 10px;
+    &-item {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    label {
+      font-weight: 600;
+      color: rgba(999, 999, 999, 0.8);
+      letter-spacing: 3px;
+    }
+
+    .data-input {
+      width: 100%;
+      font-size: 15px;
+      padding: 5px;
+      border-radius: 0.5em;
+    }
+  }
+
+  .CreateButton {
+    width: 100%;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:hover {
+      background: #5cb85c;
+      color: #fff;
+    }
+  }
+}
+
+.Projects--list {
+  width: 100%;
+  margin-left: 300px;
+  padding: 0 20px;
+  text-align: center;
+
+  &-options {
+    display: flex;
+    margin-bottom: 2rem;
+
+    button {
+      font-size: 20px;
+      background: none;
+      padding: 10px 5px;
+      color: rgba(63, 81, 181, 0.8);
+
+      &:first-child {
+        border-right: 2px solid rgba(63, 81, 181, 0.8);
+      }
+
+      &.active {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #d2d2d2;
+
+    &-filter {
+      background: none;
+      border: none;
+
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}

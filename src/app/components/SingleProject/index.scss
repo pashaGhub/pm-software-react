@@ -1,0 +1,53 @@
+.SingleProject {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 5px;
+  border-bottom: 2px solid;
+
+  &--item {
+    font-size: 15px;
+  }
+}
+.border-danger {
+  border-color: rgba(238, 110, 115, 0.75);
+}
+
+.border-warning {
+  border-color: rgba(216, 204, 68, 0.596);
+}
+
+.border-primary {
+  border-color: rgba(63, 81, 181, 0.75);
+}
+
+.border-completed {
+  border-color: rgba(102, 187, 106, 0.75);
+}
+
+.border-deleted {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.ActionBtn {
+  border: none;
+  padding: 5px;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.DeleteBtn {
+  background: rgba(238, 110, 115, 0.75);
+}
+.StartBtn {
+  background: rgba(63, 81, 181, 0.75);
+}
+.CompleteBtn {
+  background: rgba(102, 187, 106, 0.75);
+}
+
+.RemoveBtn {
+  background: rgba(0, 0, 0, 0.5);
+}
