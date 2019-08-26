@@ -3,10 +3,6 @@ import { Form, Field } from "react-final-form";
 import { ProjectsContext } from "../../../../context";
 
 function Sidebar() {
-  const makeAlert = values => {
-    console.log(values);
-  };
-
   const { addProject } = useContext(ProjectsContext);
   return (
     <Form

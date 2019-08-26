@@ -6,6 +6,7 @@ import { ProjectsContext } from "../../../context";
 
 function Projects() {
   const { projects } = useContext(ProjectsContext);
+  console.log(projects);
 
   return (
     <React.Fragment>

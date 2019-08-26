@@ -7,7 +7,8 @@ const DEFAULT_PROJECTS_CONTEXT = {
       orderDate: Date,
       expirDate: Date,
       comment: String,
-      id: String
+      id: String,
+      status: String
     }
   ],
   deleted: []
@@ -32,17 +33,37 @@ function ProjectsProvider({ children }) {
       orderDate: newOrderDate,
       expirDate: newExpirDate,
       comment: newComment,
-      id: newId
+      id: newId,
+      status: "new"
     };
+    //there could be 4 types of status: new, started, completed, deleted;
 
     setProjects([...projects, newProject]);
+  };
+
+  const changeStatus = ({ id, newStatus }) => {
+    console.log(newStatus);
+    const updatedProject = projects.map(project =>
+      project.id === id ? { ...project, status: newStatus } : { ...project }
+    );
+
+    setProjects(updatedProject);
+  };
+
+  const removeProject = id => {
+    const removeProject = projects.filter(project => project.id !== id);
+
+    console.log(removeProject);
+    setProjects(removeProject);
   };
 
   return (
     <ProjectsContext.Provider
       value={{
         projects,
-        addProject
+        addProject,
+        changeStatus,
+        removeProject
       }}
     >
       {children}

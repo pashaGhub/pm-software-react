@@ -3,30 +3,29 @@
   justify-content: space-between;
   margin-top: 30px;
   padding: 5px;
-  border-bottom: 2px solid;
 
   &--item {
     font-size: 15px;
   }
 }
-.border-danger {
-  border-color: rgba(238, 110, 115, 0.75);
+.shadow-danger {
+  box-shadow: 0px 0px 10px 3px rgba(238, 110, 115, 0.75);
 }
 
-.border-warning {
-  border-color: rgba(216, 204, 68, 0.596);
+.shadow-warning {
+  box-shadow: 0px 0px 10px 3px rgba(216, 204, 68, 0.877);
 }
 
-.border-primary {
-  border-color: rgba(63, 81, 181, 0.75);
+.shadow-primary {
+  box-shadow: 0px 0px 10px 3px rgba(63, 81, 181, 0.849);
 }
 
-.border-completed {
-  border-color: rgba(102, 187, 106, 0.75);
+.shadow-completed {
+  box-shadow: 0px 0px 10px 3px rgb(102, 187, 106);
 }
 
-.border-deleted {
-  border-color: rgba(0, 0, 0, 0.5);
+.shadow-deleted {
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
 }
 
 .ActionBtn {
