@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProjectsContext } from "../../../../context";
 
 function Filters() {
+  const { sortCondition, sortProjects } = useContext(ProjectsContext);
+  console.log(sortCondition);
+
   return (
     <div className="Projects--list-header">
-      <button className="Projects--list-header-filter">Project name</button>
-      <button className="Projects--list-header-filter">Order date</button>
-      <button className="Projects--list-header-filter">Expiration date</button>
-      <button className="Projects--list-header-filter">Comment</button>
-      <button className="Projects--list-header-filter">Action</button>
+      <label>Sort by: </label>
+      <button
+        className={`Projects--list-header-filter ${
+          sortCondition === "projectName" ? "active" : false
+        }`}
+        onClick={() => sortProjects("projectName")}
+      >
+        Project name
+      </button>
+      <button
+        className={`Projects--list-header-filter ${
+          sortCondition === "orderDate" ? "active" : false
+        }`}
+        onClick={() => sortProjects("orderDate")}
+      >
+        Order date
+      </button>
+      <button
+        className={`Projects--list-header-filter ${
+          sortCondition === "expirDate" ? "active" : false
+        }`}
+        onClick={() => sortProjects("expirDate")}
+      >
+        Expiration date
+      </button>
     </div>
   );
 }

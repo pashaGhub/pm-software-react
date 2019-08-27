@@ -18,7 +18,16 @@ const ProjectsContext = React.createContext();
 
 function ProjectsProvider({ children }) {
   const [projects, setProjects] = useState([]);
-  const [deleted, setDeleted] = useState([]);
+  const [option, setOption] = useState("active"); //2 options: "active" or "deleted"
+  const [sortCondition, setSortCondition] = useState("projectName"); //3 options: "projectName" or "orderDate" or "expirDate"
+
+  const changeOption = option => {
+    setOption(option);
+  };
+
+  const sortProjects = newSortCondition => {
+    setSortCondition(newSortCondition);
+  };
 
   const addProject = ({
     newProjectName,
@@ -34,9 +43,8 @@ function ProjectsProvider({ children }) {
       expirDate: newExpirDate,
       comment: newComment,
       id: newId,
-      status: "new"
+      status: "new" //there could be 4 types of status: new, started, completed, deleted;
     };
-    //there could be 4 types of status: new, started, completed, deleted;
 
     setProjects([...projects, newProject]);
   };
@@ -61,9 +69,13 @@ function ProjectsProvider({ children }) {
     <ProjectsContext.Provider
       value={{
         projects,
+        option,
+        sortCondition,
         addProject,
         changeStatus,
-        removeProject
+        removeProject,
+        changeOption,
+        sortProjects
       }}
     >
       {children}
