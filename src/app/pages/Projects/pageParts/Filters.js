@@ -3,7 +3,6 @@ import { ProjectsContext } from "../../../../context";
 
 function Filters() {
   const { sortCondition, sortProjects } = useContext(ProjectsContext);
-  console.log(sortCondition);
 
   return (
     <div className="Projects--list-header">

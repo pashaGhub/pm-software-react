@@ -23,6 +23,11 @@
 
   &--item {
     font-size: 15px;
+
+    span {
+      font-weight: 600;
+      margin: 0 5px;
+    }
   }
 }
 
@@ -45,11 +50,11 @@
     background: rgba(0, 0, 0, 0.5);
   }
 
-  &.Inactive {
-    display: none;
-  }
-
   &:hover {
     opacity: 0.8;
   }
+}
+
+.Inactive {
+  display: none;
 }

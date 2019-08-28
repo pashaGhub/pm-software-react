@@ -49,7 +49,6 @@ function ProjectsProvider({ children }) {
   };
 
   const changeStatus = ({ id, newStatus }) => {
-    console.log(newStatus);
     const updatedProject = projects.map(project =>
       project.id === id ? { ...project, status: newStatus } : { ...project }
     );
@@ -60,7 +59,6 @@ function ProjectsProvider({ children }) {
   const removeProject = id => {
     const removeProject = projects.filter(project => project.id !== id);
 
-    console.log(removeProject);
     setProjects(removeProject);
   };
 

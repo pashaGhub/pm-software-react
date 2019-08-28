@@ -26,10 +26,22 @@ function SingleProject({
 
   return (
     <div className={className}>
-      <div className="SingleProject--item">{projectName}</div>
-      <div className="SingleProject--item">{orderDate}</div>
-      <div className="SingleProject--item">{expirDate}</div>
-      <div className="SingleProject--item">{comment}</div>
+      <div className="SingleProject--item">
+        <span>Title:</span>
+        {projectName}
+      </div>
+      <div className="SingleProject--item">
+        <span>Order date:</span>
+        {orderDate}
+      </div>
+      <div className="SingleProject--item">
+        <span>Expiration date:</span>
+        {expirDate}
+      </div>
+      <div className="SingleProject--item">
+        <span>Comment:</span>
+        {comment}
+      </div>
       <div className="SingleProject--item">
         <button
           className={classes("ActionBtn", "StartBtn", {
