@@ -12,6 +12,7 @@ function Sidebar() {
           <div className="Sidebar--group">
             <label className="Sidebar--group-item">Project name</label>
             <Field
+              required
               name="newProjectName"
               component="input"
               type="text"

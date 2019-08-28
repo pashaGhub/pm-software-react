@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 
-const DEFAULT_PROJECTS_CONTEXT = {
-  projects: [
-    {
-      projectName: String,
-      orderDate: Date,
-      expirDate: Date,
-      comment: String,
-      id: String,
-      status: String
-    }
-  ],
-  deleted: []
-};
+// data structure template: DEFAULT_PROJECTS_CONTEXT = {
+//   projects: [
+//     {
+//       projectName: String,
+//       orderDate: Date,
+//       expirDate: Date,
+//       comment: String,
+//       id: String,
+//       status: String
+//     }
+//   ]
+// };
 
 const ProjectsContext = React.createContext();
 

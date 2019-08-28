@@ -6,27 +6,15 @@ import { ProjectsContext } from "../../../context";
 
 function Projects() {
   const { projects, option, sortCondition } = useContext(ProjectsContext);
-  let filteredProjects = [];
-  filteredProjects =
-    option === "active"
-      ? projects.filter(project => project.status !== "deleted")
-      : projects.filter(project => project.status === "deleted");
+  const filteredProjects = projects.filter(({ status }) =>
+    option === "active" ? status !== "deleted" : status === "deleted"
+  );
 
-  if (sortCondition === "projectName") {
-    filteredProjects.sort((a, b) =>
-      a.projectName > b.projectName ? 1 : b.projectName > a.projectName ? -1 : 0
-    );
-  } else if (sortCondition === "orderDate") {
-    filteredProjects.sort((a, b) =>
-      a.orderDate > b.orderDate ? 1 : b.orderDate > a.orderDate ? -1 : 0
-    );
-  } else if (sortCondition === "expirDate") {
-    filteredProjects.sort((a, b) =>
-      a.expirDate > b.expirDate ? 1 : b.expirDate > a.expirDate ? -1 : 0
+  function sortBy(data, key) {
+    return [...data].sort((a, b) =>
+      a[key] > b[key] ? 1 : b[key] > a[key] ? -1 : 0
     );
   }
-
-  console.log(filteredProjects);
 
   return (
     <React.Fragment>
@@ -35,7 +23,7 @@ function Projects() {
         <Options />
         <Filters />
         <div className="Projects--list-board">
-          {filteredProjects.map(data => (
+          {sortBy(filteredProjects, sortCondition).map(data => (
             <SingleProject {...data} key={data.id} />
           ))}
         </div>

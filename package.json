@@ -2,7 +2,9 @@
   "name": "project-management-react",
   "version": "0.1.0",
   "private": true,
+  "author": "Pavel Sucharev",
   "dependencies": {
+    "classnames": "^2.2.6",
     "final-form": "^4.18.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
