@@ -1,8 +1,11 @@
 .SingleProject {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 40% 0.5fr;
+  grid-template-rows: repeat(2, auto);
+  place-self: stretch;
+  text-align: start;
+  margin-bottom: 1.5em;
+  padding: 5px 10px;
   box-shadow: 0px 0px 10px 3px rgba(63, 81, 181, 0.849);
 
   &.shadow-danger {
@@ -21,20 +24,68 @@
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5);
   }
 
-  &--item {
-    font-size: 15px;
+  &--tag {
+    font-weight: 600;
+    // border-bottom: 1px solid;
+    border-bottom: 0.2em solid rgba(85, 85, 85, 0.5);
+  }
 
-    span {
-      font-weight: 600;
-      margin: 0 5px;
-    }
+  &--value {
+    border-right: 0.1em solid rgba(85, 85, 85, 0.5);
+  }
+
+  &--title-tag {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  &--title-value {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  &--order-tag {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  &--order-value {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  &--expir-tag {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+  &--expir-value {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+
+  &--comment-tag {
+    grid-column: 4 / 5;
+    grid-row: 1;
+  }
+  &--comment-value {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+
+  &--btns {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    text-align: center;
+    padding-left: 1em;
   }
 }
 
 .ActionBtn {
   border: none;
-  padding: 5px;
+  width: 7em;
+  height: auto;
+  padding: 0.3em;
   transition: 0.2s;
+  border-radius: 2px;
+  font-weight: 600;
 
   &.DeleteBtn {
     background: rgba(238, 110, 115, 0.75);

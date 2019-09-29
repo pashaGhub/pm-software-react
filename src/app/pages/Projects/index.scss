@@ -3,7 +3,9 @@
   height: 100%;
   width: 300px;
   padding: 20px 10px;
-  background: rgba(63, 81, 181, 0.8);
+  background: linear-gradient(rgba(63, 81, 80, 0.85), rgba(63, 81, 80, 0.85)),
+    url("../../img/sidenavBg.jpg");
+  background-size: cover;
 
   &--group {
     padding-bottom: 10px;
@@ -61,14 +63,14 @@
       font-size: 20px;
       background: none;
       padding: 10px 5px;
-      color: rgba(63, 81, 181, 0.8);
+      color: rgba(63, 81, 80, 0.85);
 
       &:first-child {
-        border-right: 2px solid rgba(63, 81, 181, 0.8);
+        border-right: 2px solid rgba(63, 81, 80, 0.85);
       }
 
       &.active {
-        font-weight: 600;
+        color: rgba(63, 81, 80, 1);
       }
     }
   }

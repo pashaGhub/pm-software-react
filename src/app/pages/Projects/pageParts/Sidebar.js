@@ -40,6 +40,7 @@ function Sidebar() {
           <div className="Sidebar--group">
             <label className="Sidebar--group-item">Comment</label>
             <Field
+              required
               name="newComment"
               component="textarea"
               className="Sidebar--group-item data-input"

@@ -56,6 +56,16 @@ function ProjectsProvider({ children }) {
     setProjects(updatedProject);
   };
 
+  const editProject = () => {
+    console.log("I am in ProjectContext");
+
+    // const updatedProject = projects.map(project =>
+    //   project.id === id ? { ...editedProject } : { ...project }
+    // );
+
+    // setProjects(updatedProject);
+  };
+
   const removeProject = id => {
     const removeProject = projects.filter(project => project.id !== id);
 
@@ -69,6 +79,7 @@ function ProjectsProvider({ children }) {
         option,
         sortCondition,
         addProject,
+        editProject,
         changeStatus,
         removeProject,
         changeOption,

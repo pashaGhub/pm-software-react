@@ -5,7 +5,7 @@
 }
 .Header {
   padding: 0px 15px;
-  background-color: rgba(63, 81, 181, 0.75);
+  background-color: rgba(63, 81, 80, 0.85);
 
   &--navigation {
     max-width: 1020px;
@@ -22,7 +22,7 @@
       &:hover,
       &.active {
         background-color: #fff;
-        color: rgba(63, 81, 181, 0.75);
+        color: rgba(63, 81, 80, 0.85);
       }
     }
   }

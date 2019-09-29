@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import classes from "classnames";
+import ReadMoreReact from "read-more-react";
+import Popup from "reactjs-popup";
 import "./index.scss";
+
+import EditPopup from "./EditPopup";
 import { ProjectsContext } from "../../../context";
 
 function SingleProject({
@@ -24,25 +28,45 @@ function SingleProject({
     "shadow-warning": timeLeft < 14 && timeLeft >= 7
   });
 
+  // function EditPopup(id) {
+  //   const projectToEdit = projects.find(project => project.id === id);
+
+  //   return console.log(projectToEdit);
+  // }
+
   return (
     <div className={className}>
-      <div className="SingleProject--item">
-        <span>Title:</span>
-        {projectName}
+      <div className="SingleProject--title-tag SingleProject--tag">Title:</div>
+      <div className="SingleProject--order-tag SingleProject--tag">
+        Order date:
       </div>
-      <div className="SingleProject--item">
-        <span>Order date:</span>
+      <div className="SingleProject--expir-tag SingleProject--tag">
+        Expiration date:
+      </div>
+      <div className="SingleProject--comment-tag SingleProject--tag">
+        Comment:
+      </div>
+      <div className="SingleProject--order-value SingleProject--value">
         {orderDate}
       </div>
-      <div className="SingleProject--item">
-        <span>Expiration date:</span>
+      <div className="SingleProject--expir-value SingleProject--value">
         {expirDate}
       </div>
-      <div className="SingleProject--item">
-        <span>Comment:</span>
-        {comment}
+      <div className="SingleProject--title-value SingleProject--value">
+        {projectName}
       </div>
-      <div className="SingleProject--item">
+      <div className="SingleProject--comment-value SingleProject--value">
+        <ReadMoreReact
+          text={comment}
+          min={80}
+          ideal={80}
+          max={80}
+          readMoreText="(read more...)"
+        ></ReadMoreReact>
+      </div>
+      <div className="SingleProject--comment-value SingleProject--value"></div>
+
+      <div className="SingleProject--btns">
         <button
           className={classes("ActionBtn", "StartBtn", {
             Inactive: status !== "new"
@@ -75,6 +99,13 @@ function SingleProject({
         >
           Remove
         </button>
+        <Popup
+          trigger={<button className="ActionBtn RemoveBtn"> Edit </button>}
+          modal
+          closeOnDocumentClick
+        >
+          <EditPopup id={id} />
+        </Popup>
       </div>
     </div>
   );
